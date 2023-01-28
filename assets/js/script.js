@@ -1,14 +1,18 @@
-var eventsArray = [];
+var eventsArray = localStorage.getItem("highscoresStorage");
 var startTime = 9;
-var endTime = 20;
+var endTime = 17;
 
 function generateArray() {
-    if (eventsArray.length == 0) {
+    if (eventsArray == '' || eventsArray === null) {
         eventsArray = [];
         for (var i = startTime; i <= endTime; i++) {
             var time = moment(i, "h")
-            eventsArray.push([time, i]);
+            eventsArray.push([time, ""]);
         }
+        localStorage.setItem("savedEvents", JSON.stringify(eventsArray));
+    }
+    else {
+        eventsArray = JSON.parse(localStorage.getItem("savedEvents"));
     }
 }
 
@@ -19,7 +23,7 @@ function generateTimeblocks() {
 }
 
 function createTimeblock(blockArray, index) {
-    var time = blockArray[0];
+    var time = moment(blockArray[0]);
     var eventTexr = blockArray[1];
 
     var timeblock = $("<div>").addClass("row").attr("data-index", index);
@@ -51,7 +55,7 @@ contanerEl.on("click", ".saveBtn", function (event) {
     console.log(selectedEvent.text());
     console.log(selectedEvent.parent().attr("data-index"));
     eventsArray[selectedEvent.parent().attr("data-index")][1] = selectedEvent.parent().children("textarea").val();
-
+    localStorage.setItem("savedEvents", JSON.stringify(eventsArray));
 });
 
 generateArray();
