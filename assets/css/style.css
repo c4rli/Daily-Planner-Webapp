@@ -13,12 +13,8 @@ textarea {
   padding: 10px;
 }
 
-.jumbotron {
-  text-align: center;
-  background-color: transparent;
-  color: black;
-  border-radius: 0;
-  border-bottom: 10px solid black;
+#dateString {
+  font-weight: bold;
 }
 
 .description {
@@ -28,49 +24,51 @@ textarea {
 .time-block {
   text-align: center;
   border-radius: 0px; 
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
+  border-top: solid #000000;
+  border-bottom: solid #000000;
+  border-width: 2px;
 }
 
-.row {
+.time-block-container {
   white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;
-  margin: 5px 0px;
+  height: 60px;
+  max-width: 1000px;
 }
 
 .hour {
+  white-space: nowrap;
   background-color: #ffffff;
   color: #000000;
-  border-top: 1px solid #000000;
-  border-left: 1px solid #000000;
-  border-bottom: 1px solid #000000;
+  border-top: solid #000000;
+  border-left: solid #000000;
+  border-bottom: solid #000000;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  border-width: 2px;
   width: 10%;
+  
 }
 
 .past {
   background-color: #d3d3d3;
-  color: white;
 }
 
 .present {
   background-color: #ff6961;
-  color: white;
 }
 
 .future {
   background-color: #77dd77;
-  color: white;
 }
 
 .saveBtn {
-  border-left: 1px solid black;
+  border-left: solid;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  border-width: 2px;
+  border-color: #000000;
 }
 
 .saveBtn i:hover {

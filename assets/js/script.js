@@ -24,11 +24,15 @@ function generateTimeblocks() {
 
 function createTimeblock(blockArray, index) {
     var time = moment(blockArray[0]);
-    var eventTexr = blockArray[1];
+    var eventText = blockArray[1];
 
-    var timeblock = $("<div>").addClass("row").attr("data-index", index);
-    var blockTime = $("<div>").text(time.format("h A")).addClass("hour px-3");
-    var blockText = $("<textarea>").text(eventTexr).addClass("time-block flex-grow-1");
+    var timeblock = $("<div>").addClass("time-block-container d-flex flex-row mb-3 mx-auto")
+        .attr("data-index", index);
+    var blockTime = $("<div>").text(time.format("h A"))
+        .addClass("hour px-3");
+    var blockText = $("<textarea>").text(eventText)
+        .addClass("time-block flex-grow-1")
+        .attr("placeholder", "Enter a task ...");
     var blockSave = $("<button>").text("Save").addClass("saveBtn");
 
     if (moment(time).isSame(currentDayTime, "hour")) {
@@ -46,7 +50,7 @@ function createTimeblock(blockArray, index) {
 }
 
 var currentDayTime = moment();
-$("#currentDay").text(currentDayTime.format("MMMM Do YYYY h:mm a"));
+$("#currentDay").text(currentDayTime.format("Do [of] MMMM YYYY"));
 
 var contanerEl = $("#mainContainer");
 
