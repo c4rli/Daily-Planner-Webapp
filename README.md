@@ -28,7 +28,7 @@ Persist events between refreshes of a page.
 ### Mock up:
 ![image](./assets/README/mockup.gif)
 ### Preview of webpage:
-![image](./assets/README/Screenshot1.png)
+![image](./assets/README/screenshot1.png)
 
 ## Installation
 N/A
