@@ -27,11 +27,12 @@ textarea {
   border-top: solid #000000;
   border-bottom: solid #000000;
   border-width: 2px;
+  font-size: 1.5em;
 }
 
 .time-block-container {
   white-space: pre-wrap;
-  height: 60px;
+  min-height: 60px;
   max-width: 1000px;
 }
 
@@ -71,7 +72,7 @@ textarea {
   border-color: #000000;
 }
 
-.saveBtn i:hover {
+.saveBtn:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
