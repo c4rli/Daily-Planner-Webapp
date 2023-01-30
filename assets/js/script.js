@@ -1,5 +1,5 @@
 // Starting global variables, get local storage and set start time and end time.
-var eventsArray = localStorage.getItem("highscoresStorage");
+var eventsArray = localStorage.getItem("savedEvents");
 var startTime = 9;
 var endTime = 17;
 
